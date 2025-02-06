@@ -1,0 +1,267 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lightblue;
+}
+
+.content {
+    width: 150vmin;
+    height: 90vmin;
+    background: lightblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.content div {
+    /*background-color: #fff;*/
+    width: 14vmin;
+    height: 25vmin;
+    position: relative;
+}
+
+.letter-a {
+    background:
+            conic-gradient(from 153deg at 50% 0%, darkblue 0 7.5%, #fff0 0 100%),
+            conic-gradient(from 153deg at 50% 0%, black 0 15%, #fff0 0 100%);
+}
+
+.letter-b {
+    background:
+            radial-gradient(circle at 70% 70%, #ff660060 0 29%, #fff0 calc(29% + 1px) 100%),
+            radial-gradient(circle at 70% 26%, #ff660060 0 24.5%, #fff0 calc(24.5% + 1px) 100%),
+            linear-gradient(90deg, #ff660060 0 70%, #fff0 0 100%);
+}
+
+.letter-c {
+    background:
+            linear-gradient(45deg, #1900ff60 0 50%, #fff0 calc(50% + 1px) 100%),
+            linear-gradient(135deg, #1900ff60 0 50%, #fff0 calc(50% + 1px) 100%);
+    border-radius: 100%;
+}
+
+.letter-d {
+    background:
+            radial-gradient(circle at 50% 50%, #ff00dd60 0 70%, #fff0 calc(70% + 1px) 100%),
+            linear-gradient(90deg, #ff00dd60 0 50%, #fff0 0 100%);
+}
+
+.letter-e {
+    background:
+            linear-gradient(90deg, #00a09860 0 75%, #fff0 0 100%),
+            linear-gradient(90deg, #00a09860 0 75%, #fff0 0 100%),
+            linear-gradient(90deg, #00a09860 0 50%, #fff0 0 100%),
+            linear-gradient(0deg, #00a09860 0 33%, #fff0 0 67%, #00a09860 0 100%);
+    background-size: 100% 34%, 100% 34%, 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 50%,0 50%, 0 0, 0 0;
+}
+
+.letter-f {
+    background:
+            linear-gradient(90deg, #c2000060 0 75%, #fff0 0 100%),
+            linear-gradient(90deg, #c2000060 0 75%, #fff0 0 100%),
+            linear-gradient(90deg, #c2000060 0 50%, #fff0 0 100%),
+            linear-gradient(0deg, #fff0 0 67%, #c2000060 0 100%);
+    background-size: 100% 34%, 100% 34%, 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 50%, 0 50%, 0 0, 0 0;
+}
+
+
+
+.letter-g {
+    background:
+            radial-gradient(circle at 0 0, #18d10060 0 70%, #fff0 0 100%),
+            conic-gradient(from 90deg at 50% 50%, #18d10060 0 88%, #fff0 88% 100%);
+    border-radius: 100% 100% 0 100%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 100% 100%;
+    background-position: 100% 100% , 0 0;
+}
+
+.letter-h {
+    background:
+            linear-gradient(90deg, #ff008c60 0 100%),
+            linear-gradient(0deg, #fff0 0 33%, #ff008c60 0 66%, #fff0 0 100%),
+            linear-gradient(90deg, #fff0 0 50%, #ff008c60 0 100%) ;
+}
+
+.letter-i {
+    background: linear-gradient(90deg, #fff0 0 30%, #fdf900cc 0 70%, #fff0 0 100%) ;
+}
+
+.letter-j {
+    background:
+            radial-gradient(circle at 0 100%, #69b90060 0 70%, #fff0 0 100%),
+            conic-gradient(from 0deg at 50% 50%, #69b90060 0 75%, #fff0 75% 100%);
+    border-radius: 100% 0 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 100% 100%;
+    background-position: 100% 0% , 0 0;
+}
+
+.letter-k {
+    background:
+            linear-gradient(90deg, #b9ad0060 0 50%, #fff0 0 100%),
+            conic-gradient(from -45deg at 50% 50%, #b9ad0060 0 25%, #fff0 0% 50%,  #b9ad0060 0 75%, #fff0 0% 100%);
+}
+
+
+.letter-l {
+    background:
+            linear-gradient(0deg, #00a09860 0 30%, #fff0 0 100%),
+            linear-gradient(90deg, #00a09860 0 45%, #fff0 0 100%) ;
+}
+
+
+.letter-m {
+    background:
+            linear-gradient(-135deg, #ffffff00 0 50%, #4100d860 0 100%),
+            linear-gradient(135deg, #ffffff00 0 50%, #4100d860 0 100%);
+}
+
+
+.letter-n {
+    background:
+            linear-gradient(-135deg, #ffffff00 0 50%, #d8680060 0 100%),
+            linear-gradient(90deg, #ffffff00 0 50%, #d8680060 0 100%);
+}
+
+.letter-o {
+    background:
+            radial-gradient(circle at 50% 50%, #000cb960 0 100%),
+            linear-gradient(-45deg, #000cb960 0 50%, #fff0 0% 100%);
+    border-radius: 100%;
+}
+
+
+.letter-p {
+    background:
+            radial-gradient(circle at 25% 50%, #c600d860 0 71%, #fff0 calc(71% + 1px) 100%),
+            linear-gradient(-90deg, #ffffff00 0 50%, #c600d860 0 100%),
+            conic-gradient(from 270deg at 50% 70%, #c600d860 0 25%, #fff0 0 100%);
+    background-repeat: no-repeat;
+    background-size: 50% 70%, 100% 100%, 100% 100%;
+    background-position: 100% 0% , 0 0, 0 0;
+}
+
+.letter-q {
+    background:
+            radial-gradient(circle at 50% 50%, #86510060 0 70%, #fff0 calc(70% + 1px)  100%),
+            conic-gradient(from 135deg, #86510060 0 12.5%, #fff0 0% 100%);
+}
+
+
+.letter-r {
+    background:
+            radial-gradient(circle at 25% 50%, #abcc1d60 0 71%, #fff0 calc(71% + 1px) 100%),
+            linear-gradient(-90deg, #ffffff00 0 50%, #abcc1d60 0 100%),
+            conic-gradient(from 270deg at 50% 70%, #abcc1d60 0 25%, #fff0 0 100%),
+            conic-gradient(from 135deg at 50% 50%, #abcc1d60 0 25%, #fff0 0 100%);
+    background-repeat: no-repeat;
+    background-size: 50% 70%, 100% 100%, 100% 100%, 100% 100%;
+    background-position: 100% 0% , 0 0, 0 0, 0 0;
+}
+
+.letter-s::before,
+.letter-s::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 67.5%;
+    border-radius: 0 5vmin 5vmin 0;
+    background: #d8000b60;
+    bottom: 0;
+}
+
+.letter-s::after {
+    border-radius: 5vmin 0 0 5vmin;
+    top: 0;
+}
+
+.letter-t {
+    background:
+            linear-gradient(180deg, #00a03560 0 30%, #fff0 0 100%),
+            linear-gradient(90deg,  #fff0 0 30%, #00a03560 0 70%, #fff0 0 100%) ;
+}
+
+.letter-u {
+    background:
+            radial-gradient(circle at 50% 50%, #e46e0060 0 70%, #fff0 calc(70% + 1px) 100%),
+            conic-gradient(from 0deg, #e46e0060 0 25%, #fff0 0% 100%),
+            conic-gradient(from -90deg, #e46e0060 0 50%, #fff0 0% 100%);
+    border-radius: 0 0 100% 100%; ;
+}
+
+.letter-v {
+    background:
+            conic-gradient(from 0deg at 50% 100%, #ffe60080 0 7.5%, #fff0 0 100%),
+            conic-gradient(from -26deg at 50% 100%, #ffe60080 0 14.5%, #fff0 0 100%);
+}
+
+.letter-w {
+    background:
+            conic-gradient(from -21deg at 36% 100%, #fff0 0 0.25%, #0066ff80 0.5% 11%, #fff0 11.25% 360deg),
+            conic-gradient(from -21deg at 64% 100%, #fff0 0 0.25%, #0066ff80 0.5% 11%, #fff0 11.25% 360deg);
+}
+
+.letter-x {
+    background:
+            conic-gradient(from -26deg at 50% 100%, #c600d860 0 14.5%, #fff0 0 100%),
+            conic-gradient(from 154deg at 50% 0%, #c600d860 0 14.5%, #fff0 0 100%);
+}
+
+.letter-y {
+    background:
+            linear-gradient(90deg,  #fff0 0 30%, #00a09860 0 70%, #fff0 0 100%),
+            conic-gradient(from -26deg at 50% 100%, #00a09860 0 14.5%, #fff0 0 100%);
+}
+
+.letter-z {
+    background:
+            linear-gradient(180deg, #ff008c60 0 30%, #fff0 0 100%),
+            linear-gradient(-45deg, #ff008c60  0 50%, #fff0 0 100%),
+            linear-gradient(-45deg, #ff008c60 0 100%) ;
+}
+
+.letter-dot {
+    background:
+            radial-gradient(circle at 80% 80%, #d8680060 0 15%, #fff0 calc(15% + 1px) 100%) ;
+}
+
+.letter-com {
+    background:
+            radial-gradient(circle at 80% 70%, #3dd80060 0 15%, #fff0 calc(15% + 1px) 100%),
+            conic-gradient(from -45deg at 100% 100%, #3dd80060 0 12.5%, #fff0 0 100%) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 38% 32%;
+    background-position: 0 0 , 95% 100%;
+}
+
+
+
+.letter-qu {
+    background:
+            radial-gradient(circle at 10% 50%, #fff0 0 25%, #005ed860 calc(25% + 1px) 71%, #fff0 calc(71% + 1px) 100%),
+            radial-gradient(circle at 50% 84%, #005ed860 0 15%, #fff0 calc(15% + 1px) 100%);
+    background-size: 50% 82%,  100% 100%;
+    background-repeat: no-repeat;
+    background-position: 70% 0, 0 0;
+}
+
+.letter-ex {
+    background:
+            radial-gradient(circle at 50% 84%, black 0 15%, #fff0 calc(15% + 1px) 100%),
+            linear-gradient(90deg, #fff0 0 33%, darkblue 0 67%, #fff0 0 100%);
+    background-size:  100% 100%, 100% 82%;
+    background-repeat: no-repeat;
+    background-position:  0 0, 0 0;
+}

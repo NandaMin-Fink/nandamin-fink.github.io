@@ -17,6 +17,7 @@ html {
 #card2 {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
+    background-color: darkcyan;
 }
 
 #card2 p, #card2 h2{

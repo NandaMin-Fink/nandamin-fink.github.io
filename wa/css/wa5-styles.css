@@ -1,0 +1,28 @@
+div {
+    position: relative;
+    display: inline;
+}
+
+#scoreboard{
+    width:300px;
+}
+
+#card{
+    width:100px;
+}
+
+#overlay-scoreboard {
+    position: absolute;
+    bottom: -3em;
+    right: 10em;
+    margin: 0;
+    padding: 0;
+}
+
+#overlay-card {
+    position: absolute;
+    margin: 0;
+    bottom: 15em;
+    right: 31em;
+    padding: 0;
+}

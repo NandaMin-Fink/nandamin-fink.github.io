@@ -7,12 +7,13 @@
 }
 
 #background{
+    width: 800px;
 }
 
 #overlay-scoreboard {
     position: absolute;
     top: 10em;
-    right: 55em;
+    left: 8.5em;
     margin: 0;
     padding: 0;
 }
@@ -21,12 +22,12 @@
     position: absolute;
     margin: 0;
     top: 1em;
-    right: 75em;
+    left: 1em;
     padding: 0;
 }
 
 body{
     background-image: url('../img/soccer.png');
-    background-position: center top;
+    background-position: left top;
     background-repeat: no-repeat;
 }

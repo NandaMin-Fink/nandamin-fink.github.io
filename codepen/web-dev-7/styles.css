@@ -43,8 +43,8 @@ html:has(dialog[open]) {
     cursor: zoom-out;
   
     &::backdrop {
-      background: blue;
-      opacity: 0.75;
+      background: green;
+      opacity: 0.5;
     }
   
     form {
@@ -58,7 +58,14 @@ html:has(dialog[open]) {
   }
   
   ::view-transition-group(active-lightbox-image) {
-    animation-duration: 300ms;
+    animation-duration: 2000ms;
     animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-name:test;
   }
   
+  @keyframes test {
+  /*   0%   {scale 100%;} */
+    25%  {scale: 75%;}
+    50%  {scale: 50%;}
+  /*   100% {scale: 100;} */
+  }

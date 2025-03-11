@@ -1,0 +1,86 @@
+body {
+    background-color: whitesmoke;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+header {
+    text-align: center;
+    border-radius: 0.8em;
+    overflow: hidden;
+    box-shadow: 0 0.3em 1.2em rgba(0,0,0,0.1);
+    background: linear-gradient(to right, darkcyan, cyan);
+    color: white
+}
+
+footer {
+    text-align: center;
+    border-radius: 0.8em;
+    overflow: hidden;
+    box-shadow: 0 0.3em 1.2em rgba(0,0,0,0.1);
+    background: linear-gradient(to right, darkcyan, cyan);
+    color: white;
+    margin: 1em;
+    padding: 1em;
+}
+
+.card-grid{
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    text-align: center;
+    margin: 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 0.8em;
+    overflow: hidden;
+    box-shadow: 0 0.3em 1.2em rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    padding: 2em;
+}
+
+.card h2{
+    size: 1em;
+    color: darkcyan
+}
+
+.card .date {
+    color: #74ccff;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.card .venue {
+    color: #ff74d4;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.card .conductor {
+    font-style: italic;
+}
+
+.card .repertoire {
+    font-size: 0.85em;
+    margin-bottom: 0.5em;
+}
+
+.card .desc {
+    font-size: 0.85em;
+    line-height: 1.6;
+}
+
+
+@media screen and (min-width: 801px){
+    .card-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+  }

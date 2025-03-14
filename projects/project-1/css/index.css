@@ -1,30 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+}
 body {
-    background-color: whitesmoke;
+    background-image: url("../img/star.jpg");
 }
 
-.container {
+main {
     max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    justify-content: center;
+    margin: 2em auto;
+    padding: 1em
 }
+
 
 header {
     text-align: center;
-    border-radius: 0.8em;
     overflow: hidden;
     box-shadow: 0 0.3em 1.2em rgba(0,0,0,0.1);
-    background: linear-gradient(to right, darkcyan, cyan);
-    color: white
+    background: darkslategray;
+    color: lightgoldenrodyellow;
+    padding:1.5em;
+    top: 0;
+    z-index: 1000;
+    position: sticky;
+    backdrop-filter: blur(0.5em);
+    border-bottom: 0.1em solid #ff74d4;
+}
+
+header h1{
+    text-shadow: 0 0 0.8em rgba(255, 223, 186, 0.7);
+    background: linear-gradient(to right,lightgoldenrodyellow , #ff74d4, lightgoldenrodyellow);
+    font-family: "Orbitron";
+    background-clip: text;
+    color: transparent;
+    animation: textGradientAnimation 4s infinite linear;
+    font-size: 3em;
+}
+
+@keyframes textGradientAnimation {
+    0% { background-position: -15em 0; }
+    100% { background-position: 15em 0; }
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 1em 0;
+    border-bottom: 0.05em solid #ff74d4;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-size: 1em;
+    flex-wrap: wrap;
+    row-gap: 1em;
+}
+
+nav ul li a {
+    color: lightgoldenrodyellow;
+    padding: 0.5em;
+    margin: 1em;
+    border-radius: 20px;
+    font-family: "Orbitron";
+    text-decoration: none;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: #ff74d4;
+    opacity: 0.8;
 }
 
 footer {
     text-align: center;
-    border-radius: 0.8em;
     overflow: hidden;
     box-shadow: 0 0.3em 1.2em rgba(0,0,0,0.1);
-    background: linear-gradient(to right, darkcyan, cyan);
-    color: white;
-    margin: 1em;
+    background: lightgoldenrodyellow;
+    color: black;
     padding: 1em;
 }
 
@@ -39,48 +97,117 @@ footer {
 .card {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border-radius: 0.8em;
+    background-color: rgba(47,79,79,0.95);
+    border-radius: 2em;
     overflow: hidden;
     box-shadow: 0 0.3em 1.2em rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
     padding: 2em;
+    color: white;
 }
 
+.card:hover {
+    transform: translateY(-1em);
+    box-shadow: 0em 0em 3em 0.01em #ff74d4, 0 0.3em 0em 0em #ff74d4 inset;
+    border-top: 1em 1em #ff74d4;
+    transition: 0.4s ease;
+
+    
+}
+
+
 .card h2{
-    size: 1em;
-    color: darkcyan
+    font-family: 'Anybody';
+    font-size: 2em;
+    color: lightgoldenrodyellow;
+    margin-bottom:1em;
 }
 
 .card .date {
-    color: #74ccff;
+    color: white;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1.4em;
+    margin: 0;
 }
 
 .card .venue {
     color: #ff74d4;
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 1.1em;
 }
 
 .card .conductor {
+    color: #ff74d4;
     font-style: italic;
+    font-size: 1.1em;
 }
 
 .card .repertoire {
-    font-size: 0.85em;
+    color: #ff74d4;
+    font-size: 1.1em;
     margin-bottom: 0.5em;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 .card .desc {
-    font-size: 0.85em;
+    margin: 1em;
+    font-size: 1em;
     line-height: 1.6;
 }
 
+p {
+    font-family: "Anybody";
+}
 
-@media screen and (min-width: 801px){
+header {grid-area: heady;}
+nav {grid-area: navvy;}
+main {grid-area: mainy;}
+footer {grid-area: footy;}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+    1fr;
+    grid-template-areas:
+    "heady"
+    "navvy"
+    "mainy"
+    "footy";
+}
+
+@media screen
+and (max-width: 640px) {
+    .container {
+        grid-template-columns:
+    1fr;
+        grid-template-areas:
+    "heady"
+    "mainy"
+    "navvy"
+    "footy"
+
+    }
+    header{
+        position: static;
+    }
+    nav{
+        border-bottom: 0;
+    }
+    nav ul {
+        flex-flow: column nowrap;
+        text-align: center;
+    }
+    nav ul li a {
+        display: block;
+        padding: 10px 5px;
+        margin: 5px;
+    }
+}
+
+/* @media screen and (min-width: 801px){
     .card-grid {
         grid-template-columns: 1fr 1fr 1fr;
     }
-  }
+  } */

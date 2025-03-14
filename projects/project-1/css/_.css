@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Anybody:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg: darkslategray;
+    --accent-color: lightgoldenrodyellow;
+    --highlight-color: #ff74d4;
+    --card-opacity: 0.95;
+    --text-light: white;
+    --glow-effect: 0 0 15px rgba(255, 223, 186, 0.5);
+}
+
+body {
+    background-image: url("../img/star.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Anybody", sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Modern Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    text-align: center;
+    background: var(--primary-bg);
+    color: var(--accent-color);
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--highlight-color);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+header h1 {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 223, 186, 0.7);
+    background: linear-gradient(to right, var(--accent-color), var(--highlight-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: textShimmer 4s infinite linear;
+}
+
+@keyframes textShimmer {
+    0% { background-position: -500px 0; }
+    100% { background-position: 500px 0; }
+}
+
+/* Navigation */
+nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--highlight-color);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li a {
+    color: var(--accent-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 1px;
+    position: relative;
+    font-size: 0.3em;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 116, 212, 0.2);
+    box-shadow: 0 0 15px rgba(255, 116, 212, 0.3);
+}
+
+/* Card Grid Layout */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+/* Card Design */
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(47, 79, 79, var(--card-opacity));
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 2.5rem 2rem;
+    color: var(--text-light);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 116, 212, 0.3);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--accent-color), var(--highlight-color));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Card Typography */
+.card h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.6rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(255, 223, 186, 0.3);
+}
+
+.card .date {
+    color: var(--text-light);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card .venue, 
+.card .conductor {
+    color: var(--highlight-color);
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.card .repertoire {
+    color: var(--highlight-color);
+    font-size: 1rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border-left: 3px solid var(--highlight-color);
+    line-height: 1.6;
+    width: 90%;
+}
+
+.card .desc {
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.card .note {
+    background: rgba(255, 116, 212, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-left: 3px solid var(--highlight-color);
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: var(--primary-bg);
+    color: var(--accent-color);
+    padding: 1.5rem;
+    margin-top: 3rem;
+    border-top: 2px solid var(--highlight-color);
+    backdrop-filter: blur(5px);
+}
+
+footer small {
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+/* Futuristic Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(30, 30, 30, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--highlight-color), var(--primary-bg));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight-color);
+}

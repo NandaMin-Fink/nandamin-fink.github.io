@@ -1,0 +1,71 @@
+/* sourced from https://transition.style */
+@keyframes circle-in-top-right {
+    from {
+        clip-path: inset(0% 0% 100% 100%);
+      }
+      to {
+        clip-path: inset(0% 0% 0% 0%);
+      }
+  }
+  
+  /* view transition will cross-fade in user prefers reduced motion */
+  @media (prefers-reduced-motion: no-preference) {
+    /* old page can just sit there */
+    ::view-transition-old(root) {
+      animation: none;
+    }
+    
+    /* new page can do fancy stuff! */
+    ::view-transition-new(root) {
+      animation: 5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-top-right forwards;
+    }
+  }
+  
+  /* opt your page into the light or dark User Agent stylesheet */
+  html {
+    color-scheme: dark light;
+  }
+  
+  .dark-mode {
+    color-scheme: dark;
+    background-color:black;
+  }
+  .light-mode {
+    color-scheme: light;
+    background-color:white;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @layer support {
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+  
+    html {
+      block-size: 100%;
+    }
+  
+    body {
+      min-block-size: 100%;
+      font-family: system-ui, sans-serif;
+  
+      display: grid;
+      place-content: center;
+    }
+    
+    button {
+      font-size: 2rem;
+    }
+  }

@@ -75,15 +75,29 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #ff74d4;
     opacity: 0.8;
+    transition: ease 0.3s
 }
 
 footer {
     text-align: center;
     overflow: hidden;
     box-shadow: 0 0.3em 1.2em rgba(0,0,0,0.1);
-    background: lightgoldenrodyellow;
-    color: black;
+    background: darkslategray;
+    color: lightgoldenrodyellow;
     padding: 1em;
+    font-family: "Orbitron";
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.4em;
+}
+
+html {
+    scroll-padding-top: 9em;
 }
 
 .card-grid{
@@ -108,11 +122,9 @@ footer {
 
 .card:hover {
     transform: translateY(-1em);
-    box-shadow: 0em 0em 3em 0.01em #ff74d4, 0 0.3em 0em 0em #ff74d4 inset;
+    box-shadow: 0em 0em 3em 0.01em #ff74d4;
     border-top: 1em 1em #ff74d4;
     transition: 0.4s ease;
-
-    
 }
 
 
@@ -160,6 +172,27 @@ p {
     font-family: "Anybody";
 }
 
+#top {
+    position: fixed;
+    bottom: 3.5em;
+    right: 0.5em;
+    background-color: black;
+    color: lightgoldenrodyellow;
+    text-decoration: none;
+    padding: 0.4em;
+    border-radius: 5px;
+    display: none;
+}
+
+#top:hover {
+    background-color: lightgoldenrodyellow;
+    color: darkslategray;
+}
+
+#peice {
+    color: #ff74d4
+}
+
 header {grid-area: heady;}
 nav {grid-area: navvy;}
 main {grid-area: mainy;}
@@ -205,9 +238,3 @@ and (max-width: 640px) {
         margin: 5px;
     }
 }
-
-/* @media screen and (min-width: 801px){
-    .card-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-  } */

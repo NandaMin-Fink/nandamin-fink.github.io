@@ -1,0 +1,24 @@
+#box {
+    color: black;
+    background-color: blanchedalmond;
+    padding: 2em;
+    border: 1em black;
+    border-style: ridge;
+    margin-right: 60%;
+}
+
+h1 {
+    animation: none;
+}
+
+@keyframes swing{
+    0% {
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(90%)
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

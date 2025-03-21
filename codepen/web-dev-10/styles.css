@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Anybody:wght@500&family=Source+Code+Pro:wght@400;700&display=swap');
+
+@property --card-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: darkblue;
+}
+
+@property --shine-1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: darkslategray;
+}
+
+@property --shine-2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: darkorange;
+}
+
+.card {
+  border-radius: 1rem;
+  max-width: 36ch;
+  padding: 2rem;
+  background: radial-gradient(
+      300px circle at 55% 60% in oklab, 
+      var(--shine-2), transparent 100% 100%
+    ), radial-gradient(
+      farthest-side circle at 75% 30% in oklab, 
+      var(--shine-1) 0%, var(--card-bg) 100%
+    );
+  background-blend-mode: color-burn;
+  animation: animate-color-1 8s infinite linear alternate, 4s animate-color-2 1s infinite linear alternate;
+}
+
+@keyframes animate-color-1 {
+  from {
+    --shine-1: initial;
+  }
+  to {
+    --shine-1: darkslategray;
+  }
+}
+
+@keyframes animate-color-2 {
+  from {
+    --shine-2: initial;
+  }
+  to {
+    --shine-2: darkblue;
+  }
+}
+
+/* Lalala / Etc */
+body {
+  font-family: 'Source Code Pro', system-ui;
+  display: grid;
+  height: 100dvh;
+  place-content: center;
+}
+span {
+  font-weight: 700;
+  font-size: 90%;
+  color: darkmagentas;
+  background: green;
+  padding: 0 0.25em 0;
+}
+h2 {
+  font-family: 'Anybody';
+  margin-top: 0.5rem;
+  color: white
+}
+.card {
+  display: grid;
+  gap: 2rem;
+}
+
+p{
+    color: white
+}

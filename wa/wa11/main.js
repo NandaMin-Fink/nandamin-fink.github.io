@@ -17,11 +17,11 @@ const images = [
 /* Declaring the alternative text for each image file */
 
 const altTextArray = [
-    "a human eye",
-    "a wave",
-    "purple and white flowers",
-    "ancient egeyptian art",
-    "a butterfly",
+    "a green alien",
+    "3 purple aliens",
+    "alien scream painting",
+    "chill alien with kid",
+    "close up weird alien",
 ]
 
 /* Looping through images */

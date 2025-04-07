@@ -1,8 +1,48 @@
-h1 {
-  font-family: helvetica, arial, sans-serif;
-  text-align: center;
+*{
+  margin:0;
+  padding:0;
+}
+body {
+  background-image: url("../../projects/project-1/img/star.jpg");
 }
 
+main {
+  max-width: 1200px;
+  justify-content: center;
+  margin: 2em auto;
+  padding: 1em
+}
+
+button{
+  font-family: 'Anybody';
+  font-size: 2em;
+  color: lightgoldenrodyellow;
+  margin-bottom:1em;
+}
+
+header {
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 0.3em 1.2em rgba(0,0,0,0.1);
+  background: darkslategray;
+  color: lightgoldenrodyellow;
+  padding:1.5em;
+  top: 0;
+  z-index: 1000;
+  position: sticky;
+  backdrop-filter: blur(0.5em);
+  border-bottom: 0.1em solid #ff74d4;
+}
+
+header h1{
+  text-shadow: 0 0 0.8em rgba(255, 223, 186, 0.7);
+  background: linear-gradient(to right,lightgoldenrodyellow , #ff74d4, lightgoldenrodyellow);
+  font-family: "Orbitron";
+  background-clip: text;
+  color: transparent;
+  animation: textGradientAnimation 4s infinite linear;
+  font-size: 3em;
+}
 body {
   width: 640px;
   margin: 0 auto;
@@ -37,15 +77,19 @@ button {
 
 .thumb-bar img {
   display: block;
-  width: 20%;
+  height: 101px;
   float: left;
   cursor: pointer;
 }
 
-/* #dark {
-  background-color: rgba(0,0,0,0.5);
+.displayed-img {
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 480px;
 }
 
-#light #dark {
-  background-color: rgba(0,0,0,0);
-} */
+@keyframes textGradientAnimation {
+  0% { background-position: -15em 0; }
+  100% { background-position: 15em 0; }
+}

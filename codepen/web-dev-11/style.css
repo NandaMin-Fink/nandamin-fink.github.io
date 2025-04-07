@@ -1,0 +1,378 @@
+/* Base Style Overrides */
+main {
+    margin: 30vh 0em;
+  }
+  
+  section {
+    margin: 10vh 0em;
+  }
+  
+  .full-width {
+    padding: 5em 0em;
+  }
+  
+  /* The Shader Stuff */
+  .shader {
+    position: relative;
+    overflow: hidden;
+    backface-visibility: hidden; /* Forces GPU */
+  }
+  
+  .shader-layer {
+    background: black;
+    mix-blend-mode: multiply;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    /* background-size: 100%; */
+    background-position: center;
+  }
+  
+  .specular {
+    mix-blend-mode: color-dodge;
+    background-attachment: fixed;
+  }
+  
+  .mask {
+    mix-blend-mode: multiply;
+    /* background-image: url(sparrow_mask.png); */
+  }
+  
+  /* Gradient Definitions */
+  .gradient-sparrow {
+    background-image: linear-gradient(
+      0deg,
+      hsl(359, 60%, 40%),
+      hsl(16, 60%, 45%),
+      hsl(33, 60%, 50%),
+      hsl(45, 60%, 55%),
+      hsl(58, 60%, 60%),
+      hsl(58, 60%, 65%),
+      hsl(58, 60%, 70%),
+      hsl(96, 60%, 65%),
+      hsl(146, 60%, 60%),
+      hsl(183, 60%, 55%),
+      hsl(225, 60%, 50%),
+      hsl(265, 60%, 45%),
+      hsl(303, 60%, 40%)
+    );
+  }
+  
+  .gradient-lumon {
+    background-image: linear-gradient(
+      0deg,
+      hsl(0, 0%, 0%) 0%,
+      hsl(0, 0%, 0%) 59.8%,
+      hsl(221, 61%, 34%) 60%,
+      hsl(197, 92%, 86%) 60.2%,
+      hsl(0, 0%, 0%) 100%
+    );
+  }
+  
+  .gradient-turtle {
+    background-image: linear-gradient(
+      0deg,
+      hsl(0, 0%, 0%) 40%,
+      hsl(195, 63%, 71%) 50%,
+      hsl(261, 49%, 78%) 100%
+    );
+  }
+  
+  .gradient-dragonfly {
+    background-image: linear-gradient(
+      25deg,
+      hsl(0, 0%, 33%) 30%,
+      hsl(138, 26%, 83%) 45%,
+      hsl(77, 5%, 72%) 65%,
+      hsl(0, 0%, 33%) 70%
+    );
+  }
+  
+  .gradient-beetle {
+    background-image: linear-gradient(
+      0deg,
+      hsl(0, 0%, 0%) 10%,
+      hsl(67, 61%, 83%) 45%,
+      hsl(0, 0%, 0%) 80%
+    );
+  }
+  
+  .gradient-nanina {
+    background-image: linear-gradient(
+      0deg,
+      hsl(0, 0%, 0%) 0%,
+      hsl(50, 100%, 88%) 30%,
+      hsl(50, 100%, 88%) 70%,
+      hsl(0, 0%, 0%) 90%
+    );
+  }
+  
+  .gradient-mandala {
+    background-image: linear-gradient(
+      30deg,
+      hsl(30, 80%, 20%) 0%,
+      hsl(30, 80%, 80%) 10%,
+      hsl(30, 80%, 20%) 20%,
+      hsl(30, 80%, 80%) 30%,
+      hsl(30, 80%, 20%) 35%,
+      hsl(30, 80%, 80%) 50%,
+      hsl(30, 80%, 20%) 65%,
+      hsl(30, 80%, 80%) 70%,
+      hsl(30, 80%, 20%) 80%,
+      hsl(30, 80%, 80%) 90%,
+      hsl(30, 80%, 20%) 100%
+    );
+  }
+  
+  .gradient-deer {
+    background-image: linear-gradient(
+      -25deg,
+      hsl(0, 0%, 0%) 30%,
+      hsl(104, 26%, 83%) 45%,
+      hsl(273, 22%, 25%) 65%,
+      hsl(0, 0%, 0%) 70%
+    );
+  }
+  
+
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+}
+body {
+    background-image: url("../../projects/project-1/img/star.jpg");
+}
+
+main {
+    max-width: 1200px;
+    justify-content: center;
+    margin: 2em auto;
+    padding: 1em
+}
+
+
+header {
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 0.3em 1.2em rgba(0,0,0,0.1);
+    background: darkslategray;
+    color: lightgoldenrodyellow;
+    padding:1.5em;
+    top: 0;
+    z-index: 1000;
+    position: sticky;
+    backdrop-filter: blur(0.5em);
+    border-bottom: 0.1em solid #ff74d4;
+}
+
+header h1{
+    text-shadow: 0 0 0.8em rgba(255, 223, 186, 0.7);
+    background: linear-gradient(to right,lightgoldenrodyellow , #ff74d4, lightgoldenrodyellow);
+    font-family: "Orbitron";
+    background-clip: text;
+    color: transparent;
+    animation: textGradientAnimation 4s infinite linear;
+    font-size: 3em;
+}
+
+@keyframes textGradientAnimation {
+    0% { background-position: -15em 0; }
+    100% { background-position: 15em 0; }
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 1em 0;
+    border-bottom: 0.05em solid #ff74d4;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-size: 1em;
+    flex-wrap: wrap;
+    row-gap: 1em;
+}
+
+nav ul li a {
+    color: lightgoldenrodyellow;
+    padding: 0.5em;
+    margin: 1em;
+    border-radius: 20px;
+    font-family: "Orbitron";
+    text-decoration: none;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: #ff74d4;
+    opacity: 0.8;
+    transition: ease 0.3s
+}
+
+footer {
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 0.3em 1.2em rgba(0,0,0,0.1);
+    background: darkslategray;
+    color: lightgoldenrodyellow;
+    padding: 1em;
+    font-family: "Orbitron";
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.4em;
+}
+
+html {
+    scroll-padding-top: 9em;
+}
+
+.card-grid{
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    text-align: center;
+    margin: 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(47,79,79,0.95);
+    border-radius: 2em;
+    overflow: hidden;
+    box-shadow: 0 0.3em 1.2em rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    padding: 2em;
+    color: white;
+}
+
+.card:hover {
+    transform: translateY(-1em);
+    box-shadow: 0em 0em 3em 0.01em #ff74d4;
+    border-top: 1em 1em #ff74d4;
+    transition: 0.4s ease;
+}
+
+
+.card h2{
+    font-family: 'Anybody';
+    font-size: 2em;
+    color: lightgoldenrodyellow;
+    margin-bottom:1em;
+}
+
+.card .date {
+    color: white;
+    font-weight: bold;
+    font-size: 1.4em;
+    margin: 0;
+}
+
+.card .venue {
+    color: #ff74d4;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.card .conductor {
+    color: #ff74d4;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.card .repertoire {
+    color: #ff74d4;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.card .desc {
+    margin: 1em;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+p {
+    font-family: "Anybody";
+}
+
+#top {
+    position: fixed;
+    bottom: 3.5em;
+    right: 0.5em;
+    background-color: black;
+    color: lightgoldenrodyellow;
+    text-decoration: none;
+    padding: 0.4em;
+    border-radius: 5px;
+    display: none;
+}
+
+#top:hover {
+    background-color: lightgoldenrodyellow;
+    color: darkslategray;
+}
+
+.peice {
+    color: #ff74d4
+}
+
+header {grid-area: heady;}
+nav {grid-area: navvy;}
+main {grid-area: mainy;}
+footer {grid-area: footy;}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+    1fr;
+    grid-template-areas:
+    "heady"
+    "navvy"
+    "mainy"
+    "footy";
+}
+
+@media screen
+and (max-width: 640px) {
+    .container {
+        grid-template-columns:
+    1fr;
+        grid-template-areas:
+    "heady"
+    "mainy"
+    "navvy"
+    "footy"
+
+    }
+    header{
+        position: static;
+    }
+    nav{
+        border-bottom: 0;
+    }
+    nav ul {
+        flex-flow: column nowrap;
+        text-align: center;
+    }
+    nav ul li a {
+        display: block;
+        padding: 10px 5px;
+        margin: 5px;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<header class="content-grid">
+    <h1>Holographic Masks</h1>
+    <p>Experimenting with some CSS holographic effects, inspired by this guide from Robb Owen: <a href="https://robbowen.digital/wrote-about/css-blend-mode-shaders/" target="_blank">Holograms, light-leaks and how to build CSS-only shaders.</a></p>
+    <p>Unfortunately, this effect relies on <code>background-attachment: fixed;</code> Which doesn't work as expected on iOS Safari.</p>
+    <p>This effect also relies on scrolling over the images, for the gradient & mask to do its thing. So I have increased the margin on both ends of the demo so you should be able to see it fully.</p>
+    <p>TL;DR: Scroll.</p>
+  </header>
+  
+  <main class="content-grid flow">
+    <section>
+      <div class="grid">
+        <div class="cell">
+          <img src="pic3.jpg" alt="Silhouette design of a sparrow sitting on a branch" width="512" class="framed">
+        </div>
+        <div class="cell">
+          <div class="shader framed">
+            <img src="pic3.jpg" alt="Silhouette design of a sparrow sitting on a branch" width="512">
+            <div class="shader-layer specular gradient-sparrow">
+              <img class="shader-layer mask" src="pic3.jpg" alt="" width="300">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

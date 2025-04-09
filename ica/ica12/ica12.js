@@ -6,6 +6,7 @@ showAnswerButton.addEventListener('click', () => displayAnswer() )
 const displayAnswerDiv = document.querySelector('#js-answer-text')
 
 let answer = '';
+getQuote();
 
 async function getQuote(){
     displayAnswerDiv.innerHTML = '';

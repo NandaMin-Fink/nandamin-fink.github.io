@@ -6,8 +6,6 @@ showAnswerButton.addEventListener('click', () => displayAnswer() )
 const displayAnswerDiv = document.querySelector('#js-answer-text')
  
 let answer = '';
-getQuote();
-
 
 async function getQuote(){
     displayAnswerDiv.innerHTML = '';
@@ -38,3 +36,5 @@ function displayQuote(json_response) {
 function displayAnswer(){
     displayAnswerDiv.innerHTML = `<p> ${answer} </p>`
 }
+
+getQuote();

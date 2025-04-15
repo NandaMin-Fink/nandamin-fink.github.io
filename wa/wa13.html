@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class employee {
+            constructor (first_name, department, designation, salary, raise_eligible) {
+                this.first_name = first_name;
+                this.department = department;
+                this.designation = designation;
+                this.salary = salary;
+                this.raise_eligible = raise_eligible; 
+            }
+        }
+
+        class company {
+            constructor (companyName, website, employees) {
+                this.companyName = companyName;
+                this.website = website;
+                this.employees = employees;
+            }
+        }
+
+        // Problem 1
+        let employee1 = new employee("Sam", "Tech", "Manager", 40000, true);
+        let employee2 = new employee("Mary", "Finance", "Trainee", 18500, true);
+        let employee3 = new employee("Bill", "HR", "Executive", 21200, false);
+        let employees = [employee1, employee2, employee3];
+        console.log("Problem 1:", JSON.parse(JSON.stringify(employees)));
+
+        // Problem 2
+        const company1 = new company("Tech Corp", "www.techcorp.com", employees);
+        console.log("Problem 2: Company with base employees", JSON.parse(JSON.stringify(company1)));
+
+        // Problem 3
+        let employee4 = new employee("Anna", "Tech", "Executive", 25600, false);
+        employees.push(employee4);
+        console.log("Problem 3: Company with added employee", JSON.parse(JSON.stringify(employees)));
+
+        // Problem 4
+        let totalSalary = 0;
+        for (const employee of company1.employees) {
+            totalSalary += employee.salary;
+        }
+        console.log("Problem 4: Total salary for all employees", totalSalary);
+
+        // Problem 5
+        function giveCompanyEmployeesRaise(company, percent){
+            for (let employee of company.employees) {
+                if (employee.raise_eligible) {
+                    employee.salary += employee.salary * (percent / 100);
+                    employee.raise_eligible = false;
+                }
+            }
+        }
+
+        giveCompanyEmployeesRaise(company1, 10);
+        console.log("Problem 5: Employees with raise", JSON.parse(JSON.stringify(company1.employees)));
+
+        // Problem 6
+        const working_from_home = ['Anna', 'Sam'];
+        for (let employee of company1.employees) {
+            if (working_from_home.includes(employee.first_name)) {
+                employee.wfh = true;
+            } else {
+                employee.wfh = false;
+            }
+        }
+        console.log("Problem 6: Company1 where employees have wfh attribute", JSON.parse(JSON.stringify(company1)));
+    </script>
+</body>
+</html>

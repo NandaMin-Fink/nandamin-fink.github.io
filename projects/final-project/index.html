@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tank Phone Number Input</h1>
+    </header>
+    <main>
+        <h2>Phone Number</h2>
+        <div id="phone-number"></div>
+
+        <div id="game-area">
+            <div id="tank"></div>
+            <div id="turret"></div>
+        </div>
+
+        <div id="controls">
+            <input type="range" id="angle-slider" min="25" max="90" value="45">
+            <br>
+            <span id="angle-value">45°</span>
+            
+            <div id="power-bar-container">
+                <div id="power-bar"></div>
+            </div>
+            <div id="fire-and-restart-flex">
+                <button id="fire-button">HOLD TO CHARGE</button>
+                <button id="restart-button">Restart</button>
+            </div>
+            
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+body {
+    text-align: center;
+}
+
+#game-area {
+    position: relative;
+    width: 37em;
+    height: 25em;
+    margin: 0 auto;
+    background-color: gray;
+}
+
+#tank {
+    position: absolute;
+    left: 2em;
+    bottom: 3em;
+    width: 4em;
+    height: 2.3em;
+    background-color: green;
+}
+
+#turret {
+    position: absolute;
+    width: 3em;
+    height: 0.5em;
+    background-color: brown;
+    transform-origin: left center; /* for pivoting */
+    left: 4.1em;
+    bottom: 4.3em;
+}
+
+
+#controls {
+    margin-top: 20px;
+    background-color: gray;
+    width: 20em;
+    margin: 2em auto;
+    padding: 1em;
+}
+
+#angle-slider {
+    width: 200px;
+}
+
+#fire-button {
+    width: 10em;
+    height: 3em;
+    background-color: red;
+    color: white;
+}
+
+#fire-button:active {
+    background-color: darkred;
+}
+
+.number {
+    position: absolute;
+    top: 4em;
+    width: 2em;
+    height: 2em;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.cannonball {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    border-radius: 50%;
+    display: none;
+}
+
+#fire-and-restart-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+#phone-number {
+    margin: 1em auto;
+    font-size: 2em;
+    font-weight: bold;
+    color: red;
+}
+
+#power-bar-container {
+    width: 13em;
+    height: 20px;
+    border: 3px solid black;
+    margin: 1em auto;
+    position: relative;
+}
+
+#power-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(to left, red, green);
+}
+
+#restart-button {
+    height: 3em;
+    background-color: #33a;
+    color: white;
+    padding: 0.5em;
+}
+
+#angle-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+}

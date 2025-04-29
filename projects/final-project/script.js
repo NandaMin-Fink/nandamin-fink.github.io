@@ -174,6 +174,7 @@ function checkCollision(cannonball) {
     return false;
 }
 
+// tank class
 class Tank {
     constructor() {
         this.turretElement = document.getElementById('turret');
@@ -229,4 +230,4 @@ class Tank {
     }
 }
 const tank = new Tank();
-tank.updateAngle();
+tank.updateAngle(); 

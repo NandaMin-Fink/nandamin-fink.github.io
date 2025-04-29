@@ -12,7 +12,7 @@ restartButton.addEventListener('click', reset);
 
 function updatePhoneDisplay() {
     phoneDisplay.innerText = phoneNumber.join(' ');
-    if (phoneNumberIndex === 1) {
+    if (phoneNumberIndex === 10) {
         calling = true;
         controlPanel.style.display = 'none';
         phoneDisplay.innerText = 'CALLING...';

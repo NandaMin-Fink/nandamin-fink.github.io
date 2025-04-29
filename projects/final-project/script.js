@@ -86,10 +86,17 @@ class CannonBall {
     }
 
     reset() {
+        console.log("cannonball reset")
+        this.x=0;
+        this.y=0;
+        this.element.style.left = `${this.x}px`;
+        this.element.style.top = `${this.y}px`;
+        this.velocity = { x: 0, y: 0 };
         this.isActive = false;
         this.element.style.display = 'none';
-        if (this.animationInterval == true) {
+        if (this.animationInterval) {
             clearInterval(this.animationInterval);
+            this.animationInterval = null;
         }
     }
 
@@ -157,7 +164,9 @@ function checkCollision(cannonball) {
             topCannonballBounds < bottomTargetBounds && 
             bottomCannonballBounds > topTargetBounds) {
             
+                
             addDigit(target.value);
+            // cannonball.reset();
             return true;
         }
     }

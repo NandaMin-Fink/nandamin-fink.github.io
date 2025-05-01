@@ -7,31 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div>
     <header>
-        <h1>Tank Phone Number Input</h1>
+        <h1>Space Force Phone Number Input</h1>
     </header>
     <main>
-        <h2>Phone Number</h2>
         <div id="phone-number"></div>
 
-        <div id="game-area">
+        <div id="game-area" class="sky-section">
             <div id="tank"></div>
             <div id="turret"></div>
         </div>
 
-        <div id="controls">
-            <input type="range" id="angle-slider" min="25" max="90" value="45">
-            <br>
-            <span id="angle-value">45°</span>
-            
-            <div id="power-bar-container">
-                <div id="power-bar"></div>
+        <div class="grass-section">
+        </div>
+
+        <div class="ground-section">
+            <div id="controls">
+                <input type="range" id="angle-slider" min="25" max="160" value="45">
+                <br>
+                <span id="angle-value">45°</span>
+                
+                <div id="power-bar-container">
+                    <div id="power-bar"></div>
+                </div>
+                <div id="fire-and-restart-flex">
+                    <button id="fire-button">HOLD TO CHARGE</button>
+                    <button id="restart-button">Restart</button>
+                </div>
+                
             </div>
-            <div id="fire-and-restart-flex">
-                <button id="fire-button">HOLD TO CHARGE</button>
-                <button id="restart-button">Restart</button>
-            </div>
-            
         </div>
     </main>
     <script src="script.js"></script>

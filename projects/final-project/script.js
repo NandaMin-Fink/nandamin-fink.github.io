@@ -7,6 +7,7 @@ let power = 0;
 let numberTargets = [];
 const restartButton = document.getElementById('restart-button');
 let calling = false;
+fireButton = document.getElementById('fire-button');
 
 restartButton.addEventListener('click', reset);
 
@@ -14,7 +15,8 @@ function updatePhoneDisplay() {
     phoneDisplay.innerText = phoneNumber.join(' ');
     if (phoneNumberIndex === 10) {
         calling = true;
-        controlPanel.style.display = 'none';
+        
+        fireButton.style.display = 'none';
         phoneDisplay.innerText = 'CALLING...';
         setTimeout(() => {
             phoneDisplay.innerText = 'CALL ENDED';
@@ -28,6 +30,7 @@ function updatePhoneDisplay() {
 function reset() {
     phoneNumber = ['_','_','_','_','_','_','_','_','_','_'];
     phoneNumberIndex = 0;
+    fireButton.style.display = 'block';
     
     calling = false;
     controlPanel.style.display = 'block';
@@ -54,13 +57,92 @@ class Number {
         this.value = value;
         this.element = document.createElement('div');
         this.element.className = 'number';
-        this.element.innerText = value;
+        
+        const planeElement = document.createElement('div');
+        planeElement.className = 'plane';
+        
+        const numberElement = document.createElement('div');
+        numberElement.className = 'number-value';
+        numberElement.innerText = value;
+        
+        this.element.appendChild(planeElement);
+        this.element.appendChild(numberElement);
+        
         gameArea.appendChild(this.element);
+        
+        this.x = 0;
+        this.y = 0;
+        this.speedX = Math.random() * 2 - 1;
+        this.speedY = (Math.random() * 1 - 0.5) * 0.5;
+        
+        this.minX = 0;
+        this.maxX = 0;
+        this.minY = 0;
+        this.maxY = 0;
+        
+        this.width = 40;
+        this.height = 40;
+        
+        this.startAnimation();
     }
 
     setPosition(x, y) {
-        this.element.style.left = x + 'px';
-        this.element.style.top = y + 'px';
+        this.x = x;
+        this.y = y;
+        this.updatePosition();
+    }
+    
+    updatePosition() {
+        this.element.style.left = this.x + 'px';
+        this.element.style.top = this.y + 'px';
+    }
+    
+    updateBounds() {
+        const gameAreaRect = gameArea.getBoundingClientRect();
+        const numberRect = this.element.getBoundingClientRect();
+        
+        this.width = numberRect.width;
+        this.height = numberRect.height;
+        
+        this.minX = 10;
+        this.maxX = gameAreaRect.width - this.width - 10;
+        this.minY = 10;
+        this.maxY = gameAreaRect.height / 2;
+    }
+    
+    startAnimation() {
+        setTimeout(() => this.updateBounds(), 100);
+        
+        this.animationInterval = setInterval(() => {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            
+            if (this.x <= this.minX || this.x >= this.maxX) {
+                this.speedX = -this.speedX;
+                this.x = Math.max(this.minX, Math.min(this.x, this.maxX)); 
+            }
+            
+            if (this.y <= this.minY || this.y >= this.maxY) {
+                this.speedY = -this.speedY; 
+                this.y = Math.max(this.minY, Math.min(this.y, this.maxY)); 
+            }
+            
+            if (Math.random() < 0.05) {
+                this.speedX += (Math.random() * 0.2 - 0.1);
+                this.speedY += (Math.random() * 0.1 - 0.05);
+                
+                this.speedX = Math.max(-2, Math.min(this.speedX, 2));
+                this.speedY = Math.max(-0.5, Math.min(this.speedY, 0.5));
+            }
+            
+            this.updatePosition();
+        }, 30); 
+    }
+    
+    stopAnimation() {
+        if (this.animationInterval) {
+            clearInterval(this.animationInterval);
+        }
     }
 }
 
@@ -115,7 +197,7 @@ class CannonBall {
 
         this.isActive = true;
         let t = 0;
-        const gravity = 0.6;
+        const gravity = 2;
 
         this.animationInterval = setInterval(() => {
             if (!this.isActive) return;
@@ -187,8 +269,8 @@ class Tank {
         this.power = 0;
         this.powerInterval = null;
 
-        this.startX = 60;
-        this.startY = 315;
+        this.startX = gameArea.clientWidth / 2 -5;
+        this.startY = gameArea.clientHeight - 40;
         
         this.angleSlider.addEventListener('input', () => this.updateAngle());
         this.fireButton.addEventListener('mousedown', () => this.startCharging());
@@ -211,6 +293,7 @@ class Tank {
     }
     
     startCharging() {
+        if (calling) return;
         this.power = 0;
         this.powerBar.style.width = '0%';
         
